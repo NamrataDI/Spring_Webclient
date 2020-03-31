@@ -1,0 +1,32 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.13.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'com.wiredBrainClient'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.10.3'
+	compile group: 'io.projectreactor.ipc', name: 'reactor-netty', version: '0.7.15.RELEASE'
+
+
+
+}
